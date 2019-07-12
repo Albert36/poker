@@ -80,7 +80,7 @@
     String decision = "timeout";
     String time = "8";
     OpponentDao opponentDao = new OpponentDao();
-    opponentDao.insert(1, amazonID, card, decision, time);
+    opponentDao.insert(1, amazonID, card, decision, time, "0");
 
 
 %>

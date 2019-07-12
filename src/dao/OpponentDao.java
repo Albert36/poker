@@ -36,10 +36,10 @@ public class OpponentDao
         return list;
     }
 
-    public void insert(int player, String amazonID, String card, String decision, String decide_time)
+    public void insert(int player, String amazonID, String card, String decision, String decide_time, String payoff)
     {
         conn = DB.getConnection();
-        String sql = "insert into player" + player + " (amazonID,card,decision,decide_time) values(?,?,?,?)";
+        String sql = "insert into player" + player + " (amazonID,card,decision,decide_time, payoff) values(?,?,?,?,?)";
         try
         {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
@@ -47,6 +47,7 @@ public class OpponentDao
             preparedStatement.setString(2,card);
             preparedStatement.setString(3,decision);
             preparedStatement.setString(4,decide_time);
+            preparedStatement.setString(5,payoff);
             preparedStatement.executeUpdate();
             preparedStatement.close();
         }

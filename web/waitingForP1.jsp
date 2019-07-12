@@ -98,27 +98,28 @@
     {
         String amazonID = String.valueOf(session.getAttribute("amazonID"));
         String decision = "checked";
-        opponentDao.insert(2, amazonID, String.valueOf(num), decision, "0");
 
         GameDao gameDao = new GameDao();
         gameDao.insert(String.valueOf(player1_card), String.valueOf(num), player1_decision, decision, String.valueOf(list.get(2)), "0");
 
         String winInfo = " ";
+        int points = 0;
         if(num > player1_card)
         {
-            int points = Global.CHECK_POINT;
+            points = Global.CHECK_POINT;
             winInfo = "Your card is larger, yon earn " + points;
             session.setAttribute("winInfo", winInfo);
             session.setAttribute("points", points);
         }
         else
         {
-            int points = -1;
+            points = -Global.CHECK_POINT;
             winInfo = "Your card is smaller, yon earn " + points;
             session.setAttribute("winInfo", winInfo);
             session.setAttribute("points", points);
         }
 
+        opponentDao.insert(2, amazonID, String.valueOf(num), decision, "0", String.valueOf(points));
         response.setHeader("refresh", waitTime + ";URL=win.jsp");
     }
     else
