@@ -8,10 +8,10 @@ import java.sql.PreparedStatement;
 public class GameDao {
     private static Connection conn = null;
 
-    public void insert(String player1_card, String player2_card, String player1_decision, String player2_decision, String player1_time, String player2_time)
+    public void insert(String player1_card, String player2_card, String player1_decision, String player2_decision, String player1_time, String player2_time, String amazonID)
     {
         conn = DB.getConnection();
-        String sql = "insert into game (player1_card,player2_card,player1_decision,player2_decision,player1_time,player2_time) values(?,?,?,?,?,?)";
+        String sql = "insert into game (player1_card,player2_card,player1_decision,player2_decision,player1_time,player2_time,amazonID) values(?,?,?,?,?,?,?)";
         try
         {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
@@ -21,6 +21,7 @@ public class GameDao {
             preparedStatement.setString(4,player2_decision);
             preparedStatement.setString(5,player1_time);
             preparedStatement.setString(6,player2_time);
+            preparedStatement.setString(7,amazonID);
             preparedStatement.executeUpdate();
             preparedStatement.close();
         }

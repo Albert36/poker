@@ -61,7 +61,7 @@ public class OpponentServ extends HttpServlet
         String card = String.valueOf(req.getSession().getAttribute("player1_card"));
         String decision = "check";
 
-        gameDao.insert(String.valueOf(player1_card), String.valueOf(player2_card), decision, "checked", String.valueOf(time), "0");
+        gameDao.insert(String.valueOf(player1_card), String.valueOf(player2_card), decision, "checked", String.valueOf(time), "0", amazonID);
 
         //determine who wins
         int points = 0;
@@ -99,7 +99,7 @@ public class OpponentServ extends HttpServlet
 
         String player2_decision = String.valueOf(req.getSession().getAttribute("player2_decision"));
         String player2_time = String.valueOf(req.getSession().getAttribute("player2_time"));
-        gameDao.insert(String.valueOf(player1_card), String.valueOf(player2_card), decision, player2_decision, String.valueOf(time), player2_time);
+        gameDao.insert(String.valueOf(player1_card), String.valueOf(player2_card), decision, player2_decision, String.valueOf(time), player2_time, amazonID);
 
         int points = 0;
         if(player2_decision.equals("fold"))
@@ -147,7 +147,7 @@ public class OpponentServ extends HttpServlet
         String player1_time = String.valueOf(req.getSession().getAttribute("player1_time"));
         String player1_card = String.valueOf(req.getSession().getAttribute("player1_card"));
         String player1_decision = String.valueOf(req.getSession().getAttribute("player1_decision"));
-        gameDao.insert(player1_card, String.valueOf(card), player1_decision, decision, player1_time, String.valueOf(time));
+        gameDao.insert(player1_card, String.valueOf(card), player1_decision, decision, player1_time, String.valueOf(time), amazonID);
 
         int points = -Global.FOLD_POINT;
         String win = "Since you folded, you lose " + points + " point";
@@ -172,7 +172,7 @@ public class OpponentServ extends HttpServlet
 
         String player1_time = String.valueOf(req.getSession().getAttribute("player1_time"));
         String player1_decision = String.valueOf(req.getSession().getAttribute("player1_decision"));
-        gameDao.insert(String.valueOf(player1_card), String.valueOf(player2_card), player1_decision, decision, player1_time, String.valueOf(time));
+        gameDao.insert(String.valueOf(player1_card), String.valueOf(player2_card), player1_decision, decision, player1_time, String.valueOf(time), amazonID);
 
         int points = 0;
         if(player2_card > player1_card)

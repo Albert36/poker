@@ -100,7 +100,7 @@
         String decision = "checked";
 
         GameDao gameDao = new GameDao();
-        gameDao.insert(String.valueOf(player1_card), String.valueOf(num), player1_decision, decision, String.valueOf(list.get(2)), "0");
+        gameDao.insert(String.valueOf(player1_card), String.valueOf(num), player1_decision, decision, String.valueOf(list.get(2)), "0", amazonID);
 
         String winInfo = " ";
         int points = 0;
