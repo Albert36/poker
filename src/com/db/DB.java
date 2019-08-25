@@ -12,7 +12,7 @@ public class DB
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/poker?characterEncoding=utf-8&useSSL=true&serverTimezone=GMT";
         String username = "root";
-        String password = "mysql442000";
+        String password = "lixiaomin";
         try
         {
             Class.forName(driver);
