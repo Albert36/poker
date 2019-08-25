@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b0284bb3-2de0-4f3f-9598-8558dc35bc6c" name="poker" url="http://ec2-52-87-192-205.compute-1.amazonaws.com">
+        <fileTransfer host="ec2-52-87-192-205.compute-1.amazonaws.com" port="22" privateKey="$USER_HOME$/Downloads/poker_key.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

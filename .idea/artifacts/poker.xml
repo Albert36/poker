@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="poker">
+    <output-path>$PROJECT_DIR$/out/artifacts/poker</output-path>
+    <root id="archive" name="poker.war">
+      <element id="javaee-facet-resources" facet="poker/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="poker" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.12" />
+          <element id="library" level="project" name="classes12" />
+          <element id="library" level="project" name="ojdbc6" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
