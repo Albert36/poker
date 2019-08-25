@@ -23,6 +23,7 @@ public class MainServ extends HttpServlet
         {
             //check if this amazonID has signed
             String amazonID = String.valueOf(req.getParameter("amazonID"));
+            req.getSession().setAttribute("amazonID", amazonID);
             List<String> list_player1 = opponentDao.queryID(1);
             List<String> list_player2 = opponentDao.queryID(2);
             Iterator<String> iterator = list_player1.iterator();
